@@ -195,25 +195,22 @@
                 </div>
 
                 <!-- Start Add Comments Section -->
-                <div class="addComments">
-                    <div class="reaction">
-                        <h3>
-                            <i class="far fa-smile"></i>
-                        </h3>
+                    <div class="addComments">
+                        <div class="reaction">
+                            <h3>
+                                <i class="far fa-smile"></i>
+                            </h3>
+                        </div>
+                        <!-- Start Add Comments Form -->
+                        <form method="post" action="{% url 'comment' photo.id %}">
+                            {% csrf_token %}
+                            {{ comment_form }}
+                            <button type="submit">Post</button>
+                        </form>
+                        <!-- End Add Comments Form -->
+
                     </div>
-
-                    <!-- Start Add Comments Form -->
-                    <form method="post" action="#">
-                        <label for="id_body">Body:</label>
-                        <textarea name="body" cols="40" rows="10" placeholder="Add comment..." maxlength="300"
-                                  required="" id="id_body"></textarea>
-                        <!-- Post Comments Button -->
-                        <button type="submit">Post</button>
-                    </form>
-                    <!-- End Add Comments Form -->
-
-                </div>
-                <!-- End Add Comments Section -->
+                    <!-- End Add Comments Section -->
 
             </div>
             <!-- End Pet Photo Post Section -->
